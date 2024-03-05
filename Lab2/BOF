@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div style="line-height: 2">
+        <label for="Name">Имя</label><br>
+        <input type="text" id="Name" name="Name" placeholder="Danil"/>
+    </div>
+    <div style="line-height: 2">
+        <label for="Password">Пароль</label><br>
+        <input type="password" id="Password" name="Password"/>
+    </div>
+    <div style="line-height: 2">
+        <label for="Telephone">Номер</label><br>
+        <input type="tel" id="Telephone" name="Telephone"/>
+    </div>
+    <div style="line-height: 2">
+        <label>Пол</label><br>
+        <input type="radio" name="Gender" value="Male"/>
+        <label>Мужчина</label>
+        <input type="radio" name="Gender" value="Female"/>
+        <label>Женщина</label>
+    </div>
+    <div style="line-height: 2">
+        <label>Еда</label><br>
+        <input type="checkbox" id="Pizza" name="Pizza" value="Pizza"/>
+        <label for="Pizza">Пицца</label>
+        <input type="checkbox" id="Salad" name="Salad" value="Salad"/>
+        <label for="Salad">Салат</label>
+        <input type="checkbox" id="Burger" name="Burger" value="Burger"/>
+        <label for="Burger">Бургер</label>
+    </div>
+    <div style="line-height: 2">
+        <label for="Quantity">Количество</label><br>
+        <input type="number" id="Quantity" name="Quantity"/>
+    </div>
+    <div style="line-height: 2">
+        <label for="Color">Любимый цвет</label><br>
+        <input type="color" id="Color" name="Color"/>
+    </div>
+    <div style="line-height: 2">
+        <label for="Info">О себе</label><br>
+        <textarea id="Info" name="Info" rows="4" cols="50"></textarea>
+    </div>
+    <div style="line-height: 2">
+        <label for="Photo">Ваша фотография</label><br>
+        <input type="file" id="Photo" name="Photo"/><br>
+        <input type="submit" name="Send" value="Сохранить"/>
+        <input type="reset" name="Clear" value="Удалить"/>
+    </div>
+</body>
+</html>
