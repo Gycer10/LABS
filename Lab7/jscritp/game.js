@@ -1,45 +1,39 @@
-const randomNumber = Math.floor(Math.random() * 10) + 1;
-let attemptsLeft = 5;
-document.getElementById('guessButton').addEventListener('click', makeGuess);
-function makeGuess() {
-    let userGuess = parseInt(document.getElementById('guessInput').value);
-    let feedback = document.getElementById('feedback');
-    let attempts = document.getElementById('attempts');
+// Создаём функцию для генерации случайного числа от 1 до 10
+function generateRandomNumber() {
+  return Math.floor(Math.random() * 10) + 1;
+}
 
-    if (isNaN(userGuess) || userGuess < 1 || userGuess > 10) {
-        feedback.textContent = 'Please enter a valid number between 1 and 10.';
-        setTimeout(function() {
-            if (confirm("Invalid Character! Let's try again")) {
-                window.location.reload();
-            }
-            }, 500);
-    }
+// Создаём переменную для хранения загаданного числа
+let secretNumber = generateRandomNumber();
 
-     if (userGuess === randomNumber) {
-         feedback.textContent = 'Congratulations! You guessed the number!';
-         attempts.textContent = '';
-         setTimeout(resetGame, 2000);
-     } else if (userGuess > randomNumber) {
-         attemptsLeft--;
-         attempts.textContent = `Attempts left: ${attemptsLeft}`;
-         feedback.textContent = 'Too high.';
-     } else {
-         attemptsLeft--;
-         attempts.textContent = `Attempts left: ${attemptsLeft}`;
-         feedback.textContent = 'Too low.';
-     }
+// Функция для угадывания числа
+function guessNumber() {
+  let guess = prompt("Угадайте число от 1 до 10:");
+  guess = Number(guess);
 
-     if (attemptsLeft === 0) {
-         feedback.textContent = `You ran out of attempts! The number was ${randomNumber}.`;
-         attempts.textContent = '';
-         setTimeout(resetGame, 2000);
-     }
-    }
 
-    function resetGame() {
-        if (confirm('Play again?')) {
-            document.getElementById('feedback').textContent = '';
-            document.getElementById('attempts').textContent = '';
-            document.getElementById('guessInput').value = '';
-        }
-    }
+  if (guess < secretNumber ) {
+    alert("Число должно быть больше!");
+    guessNumber()
+
+  } else if (guess > secretNumber) {
+    alert("Число должно быть меньше!");
+    guessNumber()
+  } else {
+    alert("Вы угадали число! Вы молодец!");
+    // Перезапускаем игру
+    window.location.reload();
+   
+  }
+
+}
+
+// Цикл для попыток угадывания
+// for (let i = 1; i <= 5; i++) {
+//   guessNumber();
+// }
+
+// Если все попытки исчерпаны, предлагаем сыграть ещё раз
+if (i > 5) {
+  confirm("Все попытки исчерпаны. Сыграем ещё раз?");
+}
