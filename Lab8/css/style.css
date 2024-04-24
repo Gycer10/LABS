@@ -17,7 +17,21 @@ header {
     opacity: 0;
     animation: blink-cursor .75s step-end infinite;
 }
+.order-form {
+    display: flex;
+    justify-content: space-between;
+}
 
+.left-side, .right-side {
+    flex: 1;
+    padding: 10px;
+}
+
+.right-side {
+    border-left: 2px solid #ccc;
+    margin-left: 20px;
+    padding-left: 20px;
+}
     .multi .line:nth-child(1) {
         animation: typing 2s steps(30, end) forwards, link-blink-cursor .75s step-end infinite;
     }
