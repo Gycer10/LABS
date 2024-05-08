@@ -1,0 +1,23 @@
+.container {
+  padding-top: 15%;
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 60px;
+
+}
+
+.main_block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.block {
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+}
