@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+        }
+        .signature {
+            text-align: center;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Питомник "Росток Урала"</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="history.html">История</a>
+            <a href="order.html">Сделать заказ</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Ассортимент</h2>
+            <div class="gallery">
+                <figure>
+                    <img src="images/apple.jpg" alt="Саженец яблони" class="plant-image">
+                    <figcaption style="font-family: 'Didot', serif;"><b>Саженцы яблони</b> характеризуются прямыми и прочными стволами, коричнево-серой корой, которая с возрастом может трескаться. Листья яблони овальные, с гладким или слегка зубчатым краем, темно-зеленого цвета. Цветение яблони происходит весной и сопровождается появлением белых или розовых цветов, которые затем превращаются в плоды – яблоки разных сортов, цветов и вкусов.</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/cherry.jpg" alt="Саженец вишни" class="plant-image">
+                    <figcaption style="font-family: 'Didot', serif;"><b>Вишневые саженцы</b> имеют тонкие, гибкие стволы и ветви, покрытые гладкой корой коричневого цвета. Листья овальные, заостренные, с зубчатым краем, насыщенного зеленого цвета. Весной вишня цветет белыми или розоватыми ароматными цветами, собранными в небольшие соцветия. Плоды вишни – сочные, красные или темно-красные ягоды с характерным кисло-сладким вкусом.</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/plum.jpg" alt="Саженец сливы" class="plant-image">
+                    <figcaption style="font-family: 'Didot', serif;"><b>Саженцы сливы</b> имеют стройные, гибкие стволы и ветви с коричневой или серой корой. Листья овальные, с мелкозубчатым краем, темно-зеленого цвета и гладкой текстурой. Слива цветет весной, радуя глаз белыми или светло-розовыми цветами. Плоды сливы – сочные, округлые или овальные, разных оттенков – от желтого и зеленого до фиолетового и темно-синего, с характерным сладким или кисло-сладким вкусом.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section>
+            <h2>Контакты</h2>
+            <p style="font-family: 'Arial Narrow', Arial, sans-serif;">Адрес: Коминтерна, 5</p>
+            <p style="font-family: 'Arial Narrow', Arial, sans-serif;">Телефон: +7 123 456 7890</p>
+            <p style="font-family: 'Arial Narrow', Arial, sans-serif;">Email: rostok_nursery@plants.ru</p>
+            <p style="font-family: 'Arial Narrow', Arial, sans-serif;">Часы работы: Пн-Пт 9:00 - 18:00, Сб 10:00 - 16:00, Вс - выходной</p>
+        </section>
+        <br>
+        <section>
+            <h2>Геолокация питомника</h2>
+            <div id="map"></div>
+        </section>
+
+        <section>
+            <h2>Отзывы клиентов</h2>
+            <div class="reviews">
+                <div class="review">
+                    <p>Отличное качество саженцев, очень доволен покупкой!</p>
+                    <p><strong>Савелий Иванов</strong></p>
+                </div>
+                <div class="review">
+                    <p>Быстрая доставка и отличное обслуживание!</p>
+                    <p><strong>Анна Смирнова</strong></p>
+                </div>
+            </div>
+            <form id="reviewForm">
+                <h3>Оставьте свой отзыв</h3>
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="comment">Отзыв:</label>
+                <textarea id="comment" name="comment" required></textarea>
+                <button type="submit">Отправить</button>
+                <p id="thankYouMessage" style="display: none;">Спасибо за ваш отзыв! Он будет опубликован после модерации.</p>
+            </form>
+        </section>
+    </main>
+    <div class="signature">
+        <p>&copy; 2024 Продажа саженцев</p>
+    </div>
+    <script src="script/geodot.js"></script>
+    <script src="script/feedback.js"></script>
+</body>
+</html>

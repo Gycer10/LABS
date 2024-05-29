@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сделать заказ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Питомник "Росток Урала"</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="history.html">История</a>
+            <a href="order.html">Сделать заказ</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Сделать заказ</h2>
+            <form id="orderForm" action="#" method="post">
+                <label for="name">ФИО:</label>
+                <input type="text" id="name" name="name" required pattern="[А-Яа-яЁё\s]+" title="Пожалуйста, используйте в поле 'ФИО' только буквы русского алфавита.">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Номер телефона:</label>
+                <input type="tel" id="phone" name="phone" required pattern="\d+" title="Пожалуйста, используйте в поле 'Номер телефона' только цифры.">
+                
+                <label for="street">Улица:</label>
+                <input type="text" id="street" name="street" required pattern="[А-Яа-яЁё\s]+" title="Пожалуйста, используйте в поле 'Улица' только буквы русского алфавита.">
+
+                <label for="house">Номер дома:</label>
+                <input type="text" id="house" name="house" required pattern="[А-Яа-яЁёA-Za-z0-9\s.,/-]+" title="Пожалуйста, используйте в поле 'Номер дома' цифры и буквы русского или английского алфавита.">
+
+                <label for="flat">Номер квартиры:</label>
+                <input type="text" id="flat" name="flat" required pattern="\d+" title="Пожалуйста, используйте в поле 'Номер квартиры' только цифры.">
+                
+                <label for="city">Город:</label>
+                <input type="text" id="city" name="city" required pattern="[А-Яа-яЁё\s]+" title="Пожалуйста, используйте в поле 'Город' только буквы русского алфавита.">
+                
+                <label for="region">Регион:</label>
+                <input type="text" id="region" name="region" required pattern="[А-Яа-яЁё\s]+" title="Пожалуйста, используйте в поле 'Регион' только буквы русского алфавита.">
+                
+                <label for="postcode">Индекс:</label>
+                <input type="text" id="postcode" name="postcode" required pattern="\d+" title="Пожалуйста, используйте в поле 'Индекс' только цифры.">
+                
+                <label for="plant">Выберите саженец:</label>
+                <select id="plant" name="plant" required>
+                    <option value="plant1">Саженец яблони</option>
+                    <option value="plant2">Саженец сливы</option>
+                    <option value="plant3">Саженец вишни</option>
+                </select>
+                
+                <label for="quantity">Количество:</label>
+                <input type="number" id="quantity" name="quantity" required pattern="\d+" title="Только цифры">
+                
+                <button type="submit">Заказать</button>
+            </form>
+        </section>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Ваш заказ был успешно создан! По указанному номеру телефона с вами свяжется менеджер.</p>
+        </div>
+    </div>
+
+    <script src="script/order.js"></script>
+</body>
+</html>
